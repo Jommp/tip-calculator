@@ -4,7 +4,7 @@ import MenuItem from './components/MenuItem';
 
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <>
       <header className='bg-gray-600 p-4'>
@@ -46,5 +46,3 @@ function App() {
     </>
   )
 }
-
-export default App
