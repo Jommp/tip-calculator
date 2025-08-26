@@ -1,10 +1,14 @@
 import { menuItems } from './mocks/db';
 
+import useOrder from './hooks/useOrder';
+
 import MenuItem from './components/MenuItem';
 
 import './App.css';
 
 export default function App() {
+  const { addItemToOrder } = useOrder();
+
   return (
     <>
       <header className='bg-gray-600 p-4'>
@@ -31,6 +35,7 @@ export default function App() {
                 <MenuItem 
                   key={item.id}
                   item={item}
+                  addItemToOrder={addItemToOrder}
                 />
               ))
             }
