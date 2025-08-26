@@ -3,17 +3,29 @@ import './App.css';
 function App() {
   return (
     <>
-      <header className="bg-teal-600 p-4">
-        <h1 className="text-4xl font-bold">Tip Calculator</h1>
+      <header className='bg-gray-600 p-4'>
+        <h1 className='text-4xl font-bold text-gray-100'>
+          Tip Calculator
+        </h1>
       </header>
 
-      <main className='max-w-7xl mx-auto py-20 grid md:grid-cols-2'>
+      <main className='
+        max-w-7xl
+        mx-auto
+        p-9
+        grid
+        md:grid-cols-2
+      '>
         <section>
-          <h2>Menu</h2>
+          <h2 className='text-3xl font-bold mb-4'>
+            Menu
+          </h2>
         </section>
 
         <section>
-          <h2>Consumo</h2>
+          <h2 className='text-3xl font-bold'>
+            Check
+          </h2>
         </section>
       </main>
     </>
