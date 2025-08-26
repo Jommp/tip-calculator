@@ -1,3 +1,7 @@
+import { menuItems } from './mocks/db';
+
+import MenuItem from './components/MenuItem';
+
 import './App.css';
 
 function App() {
@@ -20,6 +24,17 @@ function App() {
           <h2 className='text-3xl font-bold mb-4'>
             Menu
           </h2>
+
+          <div className='p-2 space-y-3'>
+            {
+              menuItems.map(item => (
+                <MenuItem 
+                  key={item.id}
+                  item={item}
+                />
+              ))
+            }
+          </div>
         </section>
 
         <section>
