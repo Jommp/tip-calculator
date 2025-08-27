@@ -41,6 +41,11 @@ export default function useOrder() {
 
   const orderTotal = useMemo(() => subTotal + tipAmount, [order, tip])
 
+  function handleSaveOrder() {
+    setOrder([]);
+    setTip(0);
+  }
+
   return {
     order,
     tip,
@@ -49,6 +54,7 @@ export default function useOrder() {
     handleSelectTip,
     subTotal,
     tipAmount,
-    orderTotal
+    orderTotal,
+    handleSaveOrder
   };
 }

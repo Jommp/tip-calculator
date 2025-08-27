@@ -18,7 +18,8 @@ export default function App() {
     handleSelectTip,
     subTotal,
     tipAmount,
-    orderTotal
+    orderTotal,
+    handleSaveOrder,
   } = useOrder();
 
   return (
@@ -95,6 +96,7 @@ export default function App() {
                     subTotal={subTotal}
                     tipAmount={tipAmount}
                     orderTotal={orderTotal}
+                    handleSaveOrder={handleSaveOrder}
                   />
                 </div>
             }
