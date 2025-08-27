@@ -4,11 +4,17 @@ import useOrder from "./hooks/useOrder";
 
 import MenuItem from "./components/MenuItem";
 import Order from "./components/Order";
+import TipForm from "./components/TipForm";
 
 import "./App.css";
 
 export default function App() {
-  const { order, addItemToOrder, removeItemFromOrder } = useOrder();
+  const {
+    order,
+    addItemToOrder,
+    removeItemFromOrder,
+    handleSelectTip
+  } = useOrder();
 
   return (
     <>
@@ -69,11 +75,13 @@ export default function App() {
             {
               !order.length ?
                 <p className="text-center mt-4">Check empty... add items</p> :
-                <div className="py-4">
+                <div className="space-y-4">
                   <Order
                     order={order}
                     removeItemFromOrder={removeItemFromOrder}
                   />
+
+                  <TipForm handleSelectTip={handleSelectTip} />
                 </div>
             }
           </div>
