@@ -31,13 +31,14 @@ export default function App() {
       </header>
 
       <main className="
+        bg-gray-100
         max-w-7xl
         mx-auto
         p-9
         grid
         md:grid-cols-2
       ">
-        <section>
+        <section className="mb-8 md:mb-0">
           <h2 className="text-3xl font-bold mb-4">
             Menu
           </h2>
@@ -103,6 +104,20 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      <footer
+        className="
+          w-full
+          p-10 
+          bg-gray-950
+          md:absolute
+          md:bottom-0
+        "
+      >
+        <p className="text-gray-50 text-center">
+          Created with: Vite + React + TS + ♡
+        </p>
+      </footer>
     </>
   )
 }
