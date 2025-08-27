@@ -12,6 +12,7 @@ import "./App.css";
 export default function App() {
   const {
     order,
+    tip,
     addItemToOrder,
     removeItemFromOrder,
     handleSelectTip,
@@ -86,6 +87,7 @@ export default function App() {
                   />
 
                   <TipForm
+                    tip={tip}
                     handleSelectTip={handleSelectTip}
                   />
 
