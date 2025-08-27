@@ -5,6 +5,7 @@ import useOrder from "./hooks/useOrder";
 import MenuItem from "./components/MenuItem";
 import Order from "./components/Order";
 import TipForm from "./components/TipForm";
+import OrderSummary from "./components/OrderSummary";
 
 import "./App.css";
 
@@ -13,7 +14,10 @@ export default function App() {
     order,
     addItemToOrder,
     removeItemFromOrder,
-    handleSelectTip
+    handleSelectTip,
+    subTotal,
+    tipAmount,
+    orderTotal
   } = useOrder();
 
   return (
@@ -81,7 +85,15 @@ export default function App() {
                     removeItemFromOrder={removeItemFromOrder}
                   />
 
-                  <TipForm handleSelectTip={handleSelectTip} />
+                  <TipForm
+                    handleSelectTip={handleSelectTip}
+                  />
+
+                  <OrderSummary
+                    subTotal={subTotal}
+                    tipAmount={tipAmount}
+                    orderTotal={orderTotal}
+                  />
                 </div>
             }
           </div>
