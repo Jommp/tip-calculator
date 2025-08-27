@@ -4,6 +4,8 @@ type OrderItemProps = {
   item: OderItem
 }
 
+import { formatCurrency } from "../helpers";
+
 export default function OrderItem({ item } : OrderItemProps) {
   return (
     <>
@@ -18,9 +20,9 @@ export default function OrderItem({ item } : OrderItemProps) {
         "
       >
         <div>
-          <p className="">{ item.name } - ${ item.price }</p>
+          <p className="">{ item.name } - { formatCurrency(item.price) }</p>
           <p className="font-medium">
-            Quantity: {item.quantity} - ${ item.price * item.quantity }
+            Quantity: {item.quantity} - { formatCurrency(item.price * item.quantity) }
           </p>
         </div>
         
