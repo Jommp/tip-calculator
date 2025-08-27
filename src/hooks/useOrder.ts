@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import type { MenuItem, OderItem } from "../types";
+import type { MenuItem, OrderItem } from "../types";
 
 export default function useOrder() {
-  const [ order, setOrder ] = useState<OderItem[]>([]);
+  const [ order, setOrder ] = useState<OrderItem[]>([]);
 
   function addItemToOrder(item: MenuItem) {
     const itemIndexExists = order.findIndex(orderItem => orderItem.id === item.id);
@@ -22,7 +22,7 @@ export default function useOrder() {
     setOrder(orderUpdated);
   }
 
-  function removeItemFromOrder(id : OderItem['id']) {
+  function removeItemFromOrder(id : OrderItem['id']) {
     setOrder(order.filter(item => item.id !== id));
   }
 
