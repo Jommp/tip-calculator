@@ -2,11 +2,12 @@ import type { OderItem } from "../types";
 
 type OrderItemProps = {
   item: OderItem
+  removeItemFromOrder: (id: OderItem['id']) => void
 }
 
 import { formatCurrency } from "../helpers";
 
-export default function OrderItem({ item } : OrderItemProps) {
+export default function OrderItem({ item, removeItemFromOrder } : OrderItemProps) {
   return (
     <>
       <div
@@ -38,6 +39,7 @@ export default function OrderItem({ item } : OrderItemProps) {
           hover:bg-red-800
           active:bg-red-900
           "
+          onClick={() => removeItemFromOrder(item.id)}
         >
           X
         </button>

@@ -8,7 +8,7 @@ import OrderItem from "./components/OrderItem";
 import "./App.css";
 
 export default function App() {
-  const { order, addItemToOrder } = useOrder();
+  const { order, addItemToOrder, removeItemFromOrder } = useOrder();
 
   return (
     <>
@@ -74,6 +74,7 @@ export default function App() {
                     <OrderItem
                       key={item.id}
                       item={item}
+                      removeItemFromOrder={removeItemFromOrder}
                     />
                   ))
               }
