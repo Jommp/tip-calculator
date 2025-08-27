@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-import type { MenuItem, OrderItem } from "../types";
+import type { MenuItem, OrderItem, TipOption } from "../types";
 
 export default function useOrder() {
   const [ order, setOrder ] = useState<OrderItem[]>([]);
+  const [ tip, setTip ] = useState<TipOption['value']>(0);
 
   function addItemToOrder(item: MenuItem) {
     const itemIndexExists = order.findIndex(orderItem => orderItem.id === item.id);
@@ -26,9 +27,14 @@ export default function useOrder() {
     setOrder(order.filter(item => item.id !== id));
   }
 
+  function handleSelectTip(value : TipOption['value']) {
+    setTip(value);
+  }
+
   return {
     order,
     addItemToOrder,
     removeItemFromOrder,
+    handleSelectTip,
   };
 }
