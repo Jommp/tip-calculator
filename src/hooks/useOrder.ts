@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 import type { MenuItem, OrderItem, TipOption } from "../types";
 
@@ -31,10 +31,24 @@ export default function useOrder() {
     setTip(value);
   }
 
+  const subTotal = useMemo(() => 
+    order.reduce((total, item) => total + (item.quantity * item.price), 0), 
+    [order]
+  );
+
+  const tipTotal = useMemo(() => subTotal * tip, [order, tip]);
+  const tipAmount = !tip ? tip : tipTotal;
+
+  const orderTotal = useMemo(() => subTotal + tipAmount, [order, tip])
+
   return {
     order,
+    tip,
     addItemToOrder,
     removeItemFromOrder,
     handleSelectTip,
+    subTotal,
+    tipAmount,
+    orderTotal
   };
 }
