@@ -32,11 +32,14 @@ export default function App() {
 
       <main className="
         bg-gray-100
-        max-w-7xl
+        w-full
         mx-auto
         p-9
+        grow
+        shrink
         grid
         md:grid-cols-2
+        md:max-w-7xl
       ">
         <section className="mb-8 md:mb-0">
           <h2 className="text-3xl font-bold mb-4">
@@ -110,8 +113,6 @@ export default function App() {
           w-full
           p-10 
           bg-gray-950
-          md:absolute
-          md:bottom-0
         "
       >
         <p className="text-gray-50 text-center">
