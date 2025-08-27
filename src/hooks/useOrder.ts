@@ -22,8 +22,13 @@ export default function useOrder() {
     setOrder(orderUpdated);
   }
 
+  function removeItemFromOrder(id : OderItem['id']) {
+    setOrder(order.filter(item => item.id !== id));
+  }
+
   return {
     order,
-    addItemToOrder 
+    addItemToOrder,
+    removeItemFromOrder,
   };
 }
